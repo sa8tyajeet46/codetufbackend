@@ -2,7 +2,7 @@ import dbConfig from "../../db.config.js";
 import { Sequelize } from "sequelize";
 import model from "./code.model.js";
 import { configDotenv } from "dotenv";
-
+import mysql2 from "mysql2";
 configDotenv({ path: "./.env" });
 const sequelize = new Sequelize(
   process.env.DBUSER,
