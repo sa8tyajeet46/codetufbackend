@@ -1,5 +1,5 @@
 import db from "../models/index.js";
-
+import { createClient } from "redis";
 const showContoller = async (req, res) => {
   try {
     const cluster = createClient({ url: process.env.REDIS });
