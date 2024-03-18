@@ -2,13 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
-  "type": "commonjs",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/app.js",
-    "lint": "eslint . --ext .ts",
-    "dev": " tsx watch src/app.ts"
+    "start": "node app.js",
+    "dev": " nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,8 +20,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
-    "tsx": "^4.7.1",
-    "typescript": "^5.4.2"
+    "nodemon": "^3.1.0"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -31,7 +29,6 @@
     "express": "^4.17.1",
     "mysql2": "^3.9.2",
     "redis": "^4.6.13",
-    "sequelize": "^6.37.1",
-    "ts-node": "^10.9.2"
+    "sequelize": "^6.37.1"
   }
 }
