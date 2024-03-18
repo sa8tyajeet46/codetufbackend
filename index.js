@@ -10,11 +10,7 @@ const app = express();
 
 configDotenv({ path: "./.env" });
 
-const cluster = createClient({ url: process.env.REDIS });
 
-cluster.on("error", (err) => console.log("Redis Cluster Error", err));
-
-await cluster.connect();
 await db.sequelize.sync();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,4 +25,3 @@ app.listen(process.env.PORT, () => {
   );
 });
 
-export { cluster };

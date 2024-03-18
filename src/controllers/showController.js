@@ -3,6 +3,12 @@ import { cluster } from "../../index.js";
 
 const showContoller = async (req, res) => {
   try {
+    const cluster = createClient({ url: process.env.REDIS });
+
+    cluster.on("error", (err) => console.log("Redis Cluster Error", err));
+
+    await cluster.connect();
+
     const cache = await cluster.get("table");
 
     if (cache != null) {
