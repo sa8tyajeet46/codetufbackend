@@ -1,5 +1,4 @@
 import db from "../models/index.js";
-import { cluster } from "../../index.js";
 
 const showContoller = async (req, res) => {
   try {
